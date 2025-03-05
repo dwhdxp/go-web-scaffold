@@ -1,6 +1,9 @@
 package models
 
-import "friend-ranking/dao"
+import (
+	"friend-ranking/dao"
+	"github.com/jinzhu/gorm"
+)
 
 type Player struct {
 	Id          int    `json:"id"`
@@ -21,4 +24,18 @@ func GetPlayers(aid int) ([]Player, error) {
 	var players []Player
 	err := dao.Db.Where("aid = ?", aid).Find(&players).Error
 	return players, err
+}
+
+// 根据选手id获得选手信息
+func GetPlayerInfoById(id int) (Player, error) {
+	var player Player
+	err := dao.Db.Where("id = ?", id).First(&player).Error
+	return player, err
+}
+
+func UpdatePlayerScore(id int) error {
+	var player Player
+	err := dao.Db.Model(&player).Where("id = ?", id).
+		UpdateColumn("score", gorm.Expr("score + ?", 1)).Error
+	return err
 }

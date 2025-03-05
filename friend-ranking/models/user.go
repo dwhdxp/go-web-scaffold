@@ -1,7 +1,6 @@
 package models
 
 import (
-	"friend-ranking/pkg/logger"
 	"time"
 
 	"friend-ranking/dao"
@@ -19,11 +18,15 @@ func (User) TableName() string { return "user" }
 
 // 根据用户名查找用户
 func GetUserInfoByUsername(username string) (User, error) {
-	if dao.Db == nil {
-		logger.Error(map[string]interface{}{"Database connection is not initialized": dao.Db.Error})
-	}
 	var user User
 	err := dao.Db.Where("username = ?", username).First(&user).Error
+	return user, err
+}
+
+// 根据用户id查找用户
+func GetUserInfoById(id int) (User, error) {
+	var user User
+	err := dao.Db.Where("id = ?", id).First(&user).Error
 	return user, err
 }
 
