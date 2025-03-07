@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"friend-ranking/cache"
 	"friend-ranking/models"
 	"github.com/gin-gonic/gin"
 	"strconv"
@@ -48,11 +49,16 @@ func (v VoteController) AddVote(c *gin.Context) {
 	// 投票记录插入数据库
 	res, err := models.AddVote(userId, playerId)
 	if err == nil {
-		// 更新数据库中参赛选手分数
+		// 更新mysql
 		if err := models.UpdatePlayerScore(playerId); err != nil {
-			ReturnError(c, 4004, "更新选手分数失败")
+			ReturnError(c, 4004, "更新mysql中选手分数失败")
 			return
 		}
+		// 更新redis，避免缓存不一致问题
+		var redisKey string
+		redisKey = "ranking:" + strconv.Itoa(player.Aid)
+		cache.Rdb.ZIncrBy(redisKey, 1, playerIdStr)
+
 		ReturnSuccess(c, 0, "投票成功", res, 1)
 		return
 	}
