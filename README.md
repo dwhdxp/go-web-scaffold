@@ -88,6 +88,6 @@ zap.L().Error("error msg", zap.Error(err))
 ......
 ```
 ## Gorm
-Gorm官方文档：https://gorm.io/zh_CN/docs/index.htm
+Gorm官方文档：https://gorm.io/zh_CN/
 ## go-redis
 go-redis官方文档：https://redis.uptrace.dev/zh/guide/
