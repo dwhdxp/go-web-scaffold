@@ -48,8 +48,8 @@ viper.AddConfigPath("./config/")
 // 读取配置文件
 err = viper.ReadInConfig()
 if err != nil {
-fmt.Printf("Error reading config file, %s", err)
-return err
+	fmt.Printf("Error reading config file, %s", err)
+	return err
 }
 ```
 ### 使用结构体变量保存配置信息
