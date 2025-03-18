@@ -1,5 +1,5 @@
 # Web开发通用脚手架
-基于gin+gorm+zap+viper实现的一个web通用脚手架。
+基于gin+gorm+zap+viper+mysql+redis实现的一个web通用脚手架。
 1.gorm负责与mysql交互，也可以采用其他框架，例如sqlx；
 2.缓存采用go-redis；
 3.日志使用高性能zap日志库；
