@@ -1,0 +1,4 @@
+{"level":"INFO","time":"2025-03-18T11:58:05.484+0800","caller":"logger/logger.go:82","msg":"/","status":200,"method":"GET","path":"/","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.43.2","errors":"","cost":0}
+{"level":"INFO","time":"2025-03-18T11:58:08.760+0800","caller":"logger/logger.go:82","msg":"/","status":200,"method":"POST","path":"/","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.43.2","errors":"","cost":0}
+{"level":"INFO","time":"2025-03-18T11:58:12.770+0800","caller":"logger/logger.go:82","msg":"/","status":200,"method":"DELETE","path":"/","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.43.2","errors":"","cost":0}
+{"level":"INFO","time":"2025-03-18T11:58:23.628+0800","caller":"go-web-scaffold/main.go:71","msg":"Shutdown Server ..."}
