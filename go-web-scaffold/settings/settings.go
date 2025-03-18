@@ -64,10 +64,9 @@ func Init() (err error) {
 	if err := viper.Unmarshal(Conf); err != nil {
 		fmt.Printf("viper.Unmarshal failed, err:%v\n", err)
 	}
-	
-	// 读取环境变量
-	viper.WatchConfig()
+
 	// 监听配置文件变化
+	viper.WatchConfig()
 	viper.OnConfigChange(func(e fsnotify.Event) {
 		fmt.Printf("Config file changed: %s", e.Name)
 	})
