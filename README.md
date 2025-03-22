@@ -1,9 +1,8 @@
 # Web开发通用脚手架
-基于gin+gorm+zap+viper+mysql+redis实现的一个web通用脚手架:
-1.gorm负责与mysql交互，也可以采用其他框架，例如sqlx；
-2.缓存采用go-redis；
-3.日志使用高性能zap日志库；
-4.通过Viper来读取配置信息；
+这是一个基于 Go 语言的 Web 开发脚手架项目（go-web-scaffold），主要特点包括：
+- 项目架构
+--采用CLD分层架构设计
+-- 
 ## Viper配置
 Viper：设置默认值、支持从多种格式配置文件（YAML、JSON、TOML、HCL等）中读取配置信息、还可以实时监控和重新读取配置文件。
 ### 编写配置文件config.yaml
