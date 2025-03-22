@@ -48,8 +48,8 @@ viper.AddConfigPath("./config/")
 // 读取配置文件
 err = viper.ReadInConfig()
 if err != nil {
-fmt.Printf("Error reading config file, %s", err)
-return err
+	fmt.Printf("Error reading config file, %s", err)
+	return err
 }
 ```
 ### 使用结构体变量保存配置信息
@@ -88,6 +88,6 @@ zap.L().Error("error msg", zap.Error(err))
 ......
 ```
 ## Gorm
-Gorm官方文档：https://gorm.io/zh_CN/docs/index.htm
+Gorm官方文档：https://gorm.io/zh_CN/
 ## go-redis
 go-redis官方文档：https://redis.uptrace.dev/zh/guide/
