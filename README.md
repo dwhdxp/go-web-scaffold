@@ -1,8 +1,33 @@
 # Web开发通用脚手架
 这是一个基于 Go 语言的 Web 开发脚手架项目（go-web-scaffold），主要特点包括：
 - 项目架构
---采用CLD分层架构设计
--- 
+-- 采用CLD分层架构设计
+-- 遵循RESTful API设计规范
+-- 使用依赖注入管理组件
+-- 支持优雅启动和关闭
+
+- 核心技术栈：
+-- Web 框架：Gin
+-- 数据库：MySQL（使用 GORM 作为 ORM）
+-- 缓存：Redis
+-- 配置管理：Viper
+-- 日志系统：Zap
+
+- 项目结构
+```
+├── config/        # 配置文件目录
+├── controller/    # 控制器层，处理请求响应
+├── dao/           # 数据访问层
+│   ├── mysql/     # MySQL 数据库操作
+│   └── redis/     # Redis 缓存操作
+├── logger/        # 日志模块
+├── models/        # 数据模型
+├── pkg/           # 公共工具包
+├── routers/       # 路由配置
+└── settings/      # 配置管理
+```
+
+
 ## Viper配置
 Viper：设置默认值、支持从多种格式配置文件（YAML、JSON、TOML、HCL等）中读取配置信息、还可以实时监控和重新读取配置文件。
 ### 编写配置文件config.yaml
